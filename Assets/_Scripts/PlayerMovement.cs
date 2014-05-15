@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		Debug.Log (Time.time);
+
 		if(transform.position.x <= 0)
 		{
 			transform.Translate(1 * Time.deltaTime,0,0);
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (Time.time > jumpCooldown && playerJump == true)
 		{
 			playerJump = false;
-			Debug.Log ("ik zie collision");
+
 		}
 
 	}

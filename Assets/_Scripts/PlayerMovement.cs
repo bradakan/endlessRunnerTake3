@@ -59,6 +59,8 @@ public class PlayerMovement : MonoBehaviour {
 		if(transform.position.x < -10f || transform.position.y < -1f || transform.position.y > 12f)
 		{
 			Destroy(this.gameObject);
+			Application.LoadLevel(0);
+			//laad het nieuwe script.
 		}
 	}
 

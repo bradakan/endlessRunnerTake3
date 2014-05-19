@@ -540,8 +540,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitiScale: 5
-  jumpForce: 1000
   setGravityCooldown: 1
+  jumpForce: 1000
 --- !u!114 &1226542040
 MonoBehaviour:
   m_ObjectHideFlags: 0

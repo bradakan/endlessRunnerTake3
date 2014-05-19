@@ -7,9 +7,15 @@ public class WallController : MonoBehaviour {
 	float speed = 10;
 	public Transform otherWall;
 	public List<GameObject> walls = new List<GameObject>();
+	float speedSetCooldown = 5;
+	float speedCooldown = 5;
+	float timeScale = 1;
+
+
 	
 	void Update () 
 	{
+
 		if(transform.position.x <= -30f)
 		{
 			Vector3 temp = otherWall.position; // copy to an auxiliary variable...
@@ -22,5 +28,14 @@ public class WallController : MonoBehaviour {
 
 
 		transform.Translate(-1 * Time.deltaTime * speed,0,0);
+		if(Time.time > speedCooldown)
+		{
+			//sets the cooldown for the increased speed
+			speedCooldown = Time.time + speedSetCooldown;
+			//speed *= 1.1f;
+			timeScale += 0.1f;
+			Time.timeScale = timeScale;
+		}
+
 	}
 }

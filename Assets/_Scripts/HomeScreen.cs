@@ -4,6 +4,7 @@ using System.Collections;
 // Koen
 
 public class HomeScreen : MonoBehaviour {
+	private Rect PopUp2;
 	private Rect PopUp;
 	private bool howToPlay = false;
 	private bool credits = false;
@@ -11,6 +12,7 @@ public class HomeScreen : MonoBehaviour {
 	
 	void Start () {
 		PopUp = new Rect(Screen.width / 8 * 4, Screen.height / 4*1, 400, 200);
+		PopUp2 = new Rect (Screen.width / 2, Screen.height / 4, 400, 260);
 	}
 
 
@@ -43,7 +45,7 @@ public class HomeScreen : MonoBehaviour {
 
 		if (credits) 
 		{
-			PopUp = GUI.Window(0,PopUp,credfunc,"Credits");
+			PopUp2 = GUI.Window(0,PopUp2,credfunc,"Credits");
 		}
 	}
 
@@ -52,9 +54,10 @@ public class HomeScreen : MonoBehaviour {
 		GUI.Label(new Rect(20, 30, 100, 50), new GUIContent("Controls"));
 		GUI.Label(new Rect(35, 50, 1000, 50), new GUIContent("Change Gravity: W"));
 		GUI.Label(new Rect(35, 70, 1000, 50), new GUIContent("Jump: Space"));
+		GUI.Label(new Rect(35, 90, 1000, 50), new GUIContent("Pauze: P"));
 
-		GUI.Label(new Rect(20, 90, 100, 50), new GUIContent("Dead If:"));
-		GUI.Label(new Rect(35, 110, 1000, 50), new GUIContent("Player is out of the screen"));
+		GUI.Label(new Rect(20, 110, 100, 50), new GUIContent("Dead If:"));
+		GUI.Label(new Rect(35, 130, 1000, 50), new GUIContent("Player is out of the screen"));
 
 		
 		
@@ -84,8 +87,11 @@ public class HomeScreen : MonoBehaviour {
 		
 		GUI.Label(new Rect(20, 90, 100, 50), new GUIContent("Artists"));
 		GUI.Label(new Rect(35, 110, 1000, 50), new GUIContent("test"));
+		GUI.Label(new Rect(35, 130, 1000, 50), new GUIContent("test"));
+		GUI.Label(new Rect(35, 150, 1000, 50), new GUIContent("test"));
+		GUI.Label(new Rect(35, 170, 1000, 50), new GUIContent("test"));
 
-		if (GUI.Button (new Rect(25,165,350,25),"Close")) 
+		if (GUI.Button (new Rect(25,215,350,25),"Close")) 
 		{
 			credits = false;
 		}

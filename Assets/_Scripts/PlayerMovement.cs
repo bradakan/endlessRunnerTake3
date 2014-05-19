@@ -71,7 +71,9 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 			Application.LoadLevel(0);
-			//laad het nieuwe script.
+			//laad het nieuwe script gameobject.getcomponent.
+
+
 		}
 
 		if(Time.time > changeColliderCooldown)

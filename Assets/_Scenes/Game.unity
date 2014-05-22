@@ -360,9 +360,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherWall: {fileID: 1238226638}
   walls:
-  - {fileID: 100000, guid: 54a77b80b8561b645b2fa0719db46092, type: 2}
-  - {fileID: 100002, guid: 61392fbc7f6700f438b03c53244d4da9, type: 2}
-  - {fileID: 100002, guid: 82dd873dc94c25e4c99ab1d3e21a5a9f, type: 2}
+  - {fileID: 100000, guid: 082996d0c76bdbd43a8a02ce57141334, type: 2}
+  - {fileID: 100002, guid: a4c45dbb51cde4a42a6d496ef3ad82a5, type: 2}
+  - {fileID: 100006, guid: f956768cc142d614db86a5000e2b1f21, type: 2}
+  - {fileID: 100010, guid: 60850456e057d2b4085935f4678e3cd5, type: 2}
+  - {fileID: 100010, guid: b7da1e85c1027e2458b281c2d8223148, type: 2}
+  - {fileID: 100006, guid: 8519f4062b2ed804dbe5d792d57e922d, type: 2}
+  - {fileID: 100006, guid: 95210900be9798e418fdd2d398b09ed3, type: 2}
+  - {fileID: 100002, guid: 892753cbd55959c43bbfb1376317f41f, type: 2}
+  - {fileID: 100004, guid: cc8c92ee69e1c9e4499418eddd725e7d, type: 2}
+  - {fileID: 100002, guid: 892753cbd55959c43bbfb1376317f41f, type: 2}
+  - {fileID: 100002, guid: 892753cbd55959c43bbfb1376317f41f, type: 2}
+  timeScale: 1
 --- !u!1 &1199588727
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +465,7 @@ GameObject:
   - 114: {fileID: 1226542039}
   - 61: {fileID: 1226542036}
   - 50: {fileID: 1226542034}
+  - 114: {fileID: 1226542041}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Untagged
@@ -555,9 +565,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherWall: {fileID: 1162146702}
   walls:
-  - {fileID: 100000, guid: 54a77b80b8561b645b2fa0719db46092, type: 2}
-  - {fileID: 100002, guid: 61392fbc7f6700f438b03c53244d4da9, type: 2}
-  - {fileID: 100002, guid: 82dd873dc94c25e4c99ab1d3e21a5a9f, type: 2}
+  - {fileID: 100000, guid: 082996d0c76bdbd43a8a02ce57141334, type: 2}
+  - {fileID: 100002, guid: a4c45dbb51cde4a42a6d496ef3ad82a5, type: 2}
+  - {fileID: 100006, guid: f956768cc142d614db86a5000e2b1f21, type: 2}
+  - {fileID: 100010, guid: 60850456e057d2b4085935f4678e3cd5, type: 2}
+  - {fileID: 100010, guid: b7da1e85c1027e2458b281c2d8223148, type: 2}
+  - {fileID: 100006, guid: 8519f4062b2ed804dbe5d792d57e922d, type: 2}
+  - {fileID: 100006, guid: 95210900be9798e418fdd2d398b09ed3, type: 2}
+  - {fileID: 100002, guid: 892753cbd55959c43bbfb1376317f41f, type: 2}
+  - {fileID: 100004, guid: cc8c92ee69e1c9e4499418eddd725e7d, type: 2}
+  - {fileID: 100002, guid: 892753cbd55959c43bbfb1376317f41f, type: 2}
+  - {fileID: 100002, guid: 892753cbd55959c43bbfb1376317f41f, type: 2}
+  timeScale: 1
+--- !u!114 &1226542041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1226542033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52a2a22329256d4aa997c97881a146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1238226636
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +624,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1274965019}
-  - 114: {fileID: 1274965020}
   m_Layer: 0
   m_Name: Wall3
   m_TagString: Untagged
@@ -616,17 +645,6 @@ Transform:
   - {fileID: 1039849047}
   - {fileID: 1060051813}
   m_Father: {fileID: 1162146702}
---- !u!114 &1274965020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1274965018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab6fc4ccf66e7b42a2e35367ca13160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1552700116
 Prefab:
   m_ObjectHideFlags: 0

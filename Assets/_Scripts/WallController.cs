@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 public class WallController : MonoBehaviour {
 	
-	float speed = 10;
+	float speed = 10f;
 	public Transform otherWall;
 	public List<GameObject> walls = new List<GameObject>();
 	float speedSetCooldown = 5;
 	float speedCooldown = 5;
-	float timeScale = 1;
+	public float timeScale = 1;
 
 
 	
@@ -22,19 +22,22 @@ public class WallController : MonoBehaviour {
 			temp.x += 30f; // modify the component you want in the variable...
 			transform.position = temp; // and save the modified value 
 			Destroy(transform.GetChild(0).gameObject);
-			GameObject chunk = Instantiate(walls[Random.Range(0,walls.Count)], transform.position, transform.rotation) as GameObject;
+			GameObject chunk = Instantiate(walls[Random.Range(0,walls.Count)], temp, transform.rotation) as GameObject;
 			chunk.transform.parent = transform;
 		}
 
 
-		transform.Translate(-1 * Time.deltaTime * speed,0,0);
+
+		transform.Translate(-1 * speed * Time.deltaTime,0,0);
+
 		if(Time.time > speedCooldown)
 		{
-			//sets the cooldown for the increased speed
+			speed *= 1.05f;
+			if(speed > 20)
+			{
+				GameObject.Find("Runner").GetComponent<PlayerMovement>().gravCdTo0();
+			}
 			speedCooldown = Time.time + speedSetCooldown;
-			//speed *= 1.1f;
-			timeScale += 0.1f;
-			Time.timeScale = timeScale;
 		}
 
 	}

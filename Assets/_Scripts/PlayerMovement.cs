@@ -92,10 +92,17 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	void increaseBoxColliderSize()
 	{
-		colliderSize.x +=1;
-		colliderCenter.x -= 0.5f;
-		boxCollider.size = colliderSize;
-		boxCollider.center = colliderCenter;
+		if(colliderSize.x < 2)
+		{
+			colliderSize.x +=0.25f;
+			colliderCenter.x -= 0.125f;
+			boxCollider.size = colliderSize;
+			boxCollider.center = colliderCenter;
+		}
 
+	}
+	public void gravCdTo0()
+	{
+		setGravityCooldown = 0f;
 	}
 }

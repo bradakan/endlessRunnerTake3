@@ -249,3 +249,9 @@ pip-log.txt
 .mr.developer.cfg
 
 Assets/_Scenes/Game.unity
+
+Assets/_Scenes/Game.unity.orig
+
+Assets/_Scenes/Game.unity.orig
+
+*.orig

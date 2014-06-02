@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 	Vector2 colliderSize;
 	Vector2 colliderCenter;
 	bool playerJump;
+
+	public bool dead = false;
 	
 	// Use this for initialization
 	void Start () 
@@ -67,10 +69,11 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 
-		if(transform.position.x < -10f || transform.position.y < -1f || transform.position.y > 12f)
+		if(transform.position.x < -12f || transform.position.y < -1f || transform.position.y > 12f)
 		{
 			//Destroy(this.gameObject);
 			Component ds = this.gameObject.AddComponent("DeadScreen"); //blijft alles hierin elk frame uitvoeren!
+			dead = true;
 		}
 
 		if(Time.time > changeColliderCooldown)

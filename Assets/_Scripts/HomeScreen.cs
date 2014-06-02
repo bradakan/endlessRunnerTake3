@@ -29,6 +29,7 @@ public class HomeScreen : MonoBehaviour
 	{
 		if (GUI.Button (new Rect (Screen.width/20*1,Screen.height/8,200,30), "Start The Science")) 
 		{ //positie x, positie y, breedte, hoogte
+			GameObject.Find ("Game Data").GetComponent <GameData> ().getData();
 			Application.LoadLevel(1);
 		};
 		if (GUI.Button (new Rect (Screen.width/20*2,Screen.height/4,200,30), "How To Play")) 
@@ -59,7 +60,8 @@ public class HomeScreen : MonoBehaviour
 			credits=false;
 			howToPlay=false;
 			options = false;
-			reset = false;
+			reset = true;
+
 		};
 
 		if (GUI.Button (new Rect (Screen.width/20*6,Screen.height/4*3,200,30), "Quit")) 

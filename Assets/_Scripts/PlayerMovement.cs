@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool dead = false;
 	
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -72,6 +73,10 @@ public class PlayerMovement : MonoBehaviour {
 		if(transform.position.x < -10f || transform.position.y < -1f || transform.position.y > 12f)
 		{
 			//Destroy(this.gameObject);
+			if(GetComponent<PauzeOption> ().yourScore > PlayerPrefs.GetInt("highScore"))
+			{
+				PlayerPrefs.SetInt("highScore", GetComponent<PauzeOption> ().yourScore);
+			}
 			Component ds = this.gameObject.AddComponent("DeadScreen"); //blijft alles hierin elk frame uitvoeren!
 			dead = true;
 		}

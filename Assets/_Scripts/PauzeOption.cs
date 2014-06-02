@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PuaseOption : MonoBehaviour {
+public class PauzeOption : MonoBehaviour 
+{
 
 	private Rect PauzePopUp;
 	private Rect HowPopUp;
 	public bool paused = false;
 	public bool howToPlay = false;
 	public int yourScore = 0;
+	
 
-
-	void Start () {
+	void Start () 
+	{
 		PauzePopUp = new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200);
 
 		HowPopUp = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 200);
 	}
 	void Update () {
 
-		if (Input.GetKeyUp(KeyCode.P))
+		if (Input.GetKeyUp(KeyCode.P) && GetComponent<PlayerMovement>().dead == false)
 		{
 			if (paused)
 			{
@@ -33,8 +35,6 @@ public class PuaseOption : MonoBehaviour {
 				else 
 						Time.timeScale = 1;
 				
-		//if(GetComponent<DeadScreen>().dead != true)
-		//if(Time.timeScale == 1)// && GetComponent<DeadScreen>().dead != true)
 
 		if(GetComponent<PlayerMovement>().dead == false && paused == false && howToPlay==false)
 		{
@@ -64,7 +64,7 @@ public class PuaseOption : MonoBehaviour {
 	
 	private void pauzeFunc(int id)
 	{
-		if (GUILayout.Button ("doorgaan")) 
+		if (GUILayout.Button ("Continue")) 
 		{
 			paused = false;
 		}

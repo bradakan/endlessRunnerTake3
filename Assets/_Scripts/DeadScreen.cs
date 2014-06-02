@@ -3,14 +3,12 @@ using System.Collections;
 
 public class DeadScreen : MonoBehaviour {
 
-	public bool dead = false;
 	private Rect PopUp;
 	int score;
 	// Use this for initialization
 	void Start () {
 		PopUp = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 200);
-		score = GetComponent<PuaseOption> ().yourScore;
-		dead = true;
+		score = GetComponent<PauzeOption> ().yourScore;
 	}
 
 	void Update(){
@@ -24,6 +22,17 @@ public class DeadScreen : MonoBehaviour {
 	{
 		GUILayout.BeginArea(new Rect(100,50,200,200));
 		GUILayout.Label ("your final score = " + score);
+		GUILayout.EndArea();
+
+		if(GetComponent<PauzeOption> () .yourScore == PlayerPrefs.GetInt("highScore"))
+		{
+			GUILayout.BeginArea(new Rect(100,70,200,200));
+			GUILayout.Label ("You have beaten your highscore!");
+			GUILayout.EndArea();
+		}
+
+		GUILayout.BeginArea(new Rect(100,90,200,200));
+		GUILayout.Label ("your high score = " + PlayerPrefs.GetInt("highScore"));
 		GUILayout.EndArea();
 
 		GUILayout.BeginArea (new Rect (10,160,150,150));

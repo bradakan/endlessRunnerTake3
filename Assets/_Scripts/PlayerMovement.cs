@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 	}
-	void increaseBoxColliderSize()
+	public void increaseBoxColliderSize()
 	{
 		if(colliderSize.x < 2)
 		{

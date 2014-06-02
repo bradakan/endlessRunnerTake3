@@ -45,6 +45,7 @@ public class DeadScreen : MonoBehaviour {
 		GUILayout.BeginArea (new Rect (240,160,150,150));
 		if (GUILayout.Button ("Main menu")) 
 		{
+			GameObject.Find ("Game Data").GetComponent <GameData> ().destroy();
 			Application.LoadLevel(0);
 		};
 		GUILayout.EndArea();

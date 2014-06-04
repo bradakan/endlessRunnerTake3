@@ -9,11 +9,13 @@ public class PauzeOption : MonoBehaviour
 	public bool paused = false;
 	public bool howToPlay = false;
 	public int yourScore = 0;
-	
+
+	public GUIStyle play;
+	public GUIStyle tekst;
 
 	void Start () 
 	{
-		PauzePopUp = new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200);
+		PauzePopUp = new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 230);
 
 		HowPopUp = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 200);
 	}
@@ -64,27 +66,31 @@ public class PauzeOption : MonoBehaviour
 	
 	private void pauzeFunc(int id)
 	{
-		if (GUILayout.Button ("Continue")) 
+
+	
+
+
+		if (GUI.Button(new Rect(20,25,PauzePopUp.width-40,30), "Continue",play)) 
 		{
 			paused = false;
 		}
 
-		if (GUILayout.Button ("restart")) 
+		if (GUI.Button(new Rect(20,65,PauzePopUp.width-40,30), "Restart",play))
 		{
 			Application.LoadLevel(1);
 		}
 
-		if (GUILayout.Button ("How to play")) 
+		if (GUI.Button(new Rect(20,105,PauzePopUp.width-40,30), "How To Play",play))
 		{
 			howToPlayPopUp();
 		}
 
-		if (GUILayout.Button ("Main menu")) 
+		if (GUI.Button(new Rect(20,145,PauzePopUp.width-40,30), "Main Menu",play))
 		{
 			Application.LoadLevel(0);
 		}
 
-		if (GUILayout.Button ("Exit")) 
+		if (GUI.Button(new Rect(20,185,PauzePopUp.width-40,30), "Exit",play))
 		{
 			Application.Quit();
 		}
@@ -95,16 +101,17 @@ public class PauzeOption : MonoBehaviour
 
 	private void howFunc(int id)
 	{
-		GUI.Label(new Rect(20, 30, 100, 50), new GUIContent("Controls"));
-		GUI.Label(new Rect(35, 50, 1000, 50), new GUIContent("Change Gravity: W"));
-		GUI.Label(new Rect(35, 70, 1000, 50), new GUIContent("Jump: Space"));
+		GUI.Label(new Rect(20, 30, 100, 50), new GUIContent("Controls"),tekst);
+		GUI.Label(new Rect(35, 50, 300, 50), new GUIContent("Change Gravity: W"),tekst);
+		GUI.Label(new Rect(35, 70, 300, 50), new GUIContent("Jump: Space"),tekst);
+		GUI.Label(new Rect(35, 90, 300, 50), new GUIContent("Pauze: P"),tekst);
 		
-		GUI.Label(new Rect(20, 90, 100, 50), new GUIContent("Dead If:"));
-		GUI.Label(new Rect(35, 110, 1000, 50), new GUIContent("Player is out of the screen"));
+		GUI.Label(new Rect(20, 110, 100, 50), new GUIContent("Dead If:"),tekst);
+		GUI.Label(new Rect(35, 130, 300, 50), new GUIContent("Player is out of the screen"),tekst);
 		
 		
 		
-		if (GUI.Button (new Rect(0,165,400,25),"Close")) 
+		if (GUI.Button (new Rect(HowPopUp.width/4,165,HowPopUp.width/2,25),"Close",play)) 
 		{
 			howToPlay = false;
 			paused = true;

@@ -59,7 +59,7 @@ public class PauzeOption : MonoBehaviour
 
 		if (GetComponent<PlayerMovement> ().dead == false) 
 		{
-			GUI.Label (new Rect (Screen.width / 10 * 8, Screen.height / 20 * 1, 200, 200), "your current score: " + yourScore);
+			GUI.Label (new Rect (Screen.width / 10 * 8, Screen.height / 20 * 1, 200, 200), "your current score: " + yourScore,tekst);
 		}
 
 	}

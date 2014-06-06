@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 274623106}
   - 114: {fileID: 274623107}
+  - 82: {fileID: 274623108}
   m_Layer: 0
   m_Name: Game Data
   m_TagString: Untagged
@@ -114,6 +115,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSpeed: 0
   Diff: 0
+--- !u!82 &274623108
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274623105}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: c58db0fd8964b4c21b9cc03c68181092, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1620740658
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,14 +269,15 @@ MonoBehaviour:
   medium: 0
   hard: 0
   speed: 10
+  myStyle: {fileID: 11400000, guid: ca244189e35f4410e900dae0cfbc0d81, type: 2}
   play:
-    m_Name: 
+    m_Name: buttons
     m_Normal:
       m_Background: {fileID: 2800000, guid: a62504097ff8008418f0ececd7ae0c46, type: 3}
       m_TextColor: {r: 0, g: .00689649582, b: 1, a: 1}
     m_Hover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_Background: {fileID: 2800000, guid: fc316d85d062442a1a4298b74dd7e3f6, type: 3}
+      m_TextColor: {r: 1, g: 0, b: 0, a: 1}
     m_Active:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -273,7 +333,7 @@ MonoBehaviour:
     m_Name: 
     m_Normal:
       m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -351,7 +411,11 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2110863499}
   m_Enabled: 1
+<<<<<<< HEAD
   m_Texture: {fileID: 2800000, guid: dd28bc6940e1b554abe8dfc8743a9674, type: 3}
+=======
+  m_Texture: {fileID: 2800000, guid: 08c33a33e95464c60a8598e0c4e31395, type: 3}
+>>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2

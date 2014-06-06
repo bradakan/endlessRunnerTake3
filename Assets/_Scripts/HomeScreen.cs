@@ -18,6 +18,7 @@ public class HomeScreen : MonoBehaviour
 
 	public float speed = 10f;
 
+	public GUISkin myStyle;
 	public GUIStyle play;
 	public GUIStyle tekst;
 
@@ -51,7 +52,7 @@ public class HomeScreen : MonoBehaviour
 			options = false;
 			creditsPopUp();
 		};
-		if (GUI.Button (new Rect (Screen.width/20*4,Screen.height/2,200,50), "Options",play)) 
+		if (GUI.Button (new Rect (Screen.width/20*3,Screen.height/2,200,50), "Options",play)) 
 		{ 
 			howToPlay=false;
 			credits=false;
@@ -59,7 +60,7 @@ public class HomeScreen : MonoBehaviour
 			optionPopUp();
 			Debug.Log("Options is open");
 		};
-		if (GUI.Button (new Rect (Screen.width/20*5,Screen.height/8*5,200,50), "Reset Stats",play)) 
+		if (GUI.Button (new Rect (Screen.width/20*2,Screen.height/8*5,200,50), "Reset Stats",play)) 
 		{
 			PlayerPrefs.SetInt ("highScore", 0);
 			credits=false;
@@ -69,7 +70,7 @@ public class HomeScreen : MonoBehaviour
 
 		};
 
-		if (GUI.Button (new Rect (Screen.width/20*6,Screen.height/4*3,200,50), "Quit",play)) 
+		if (GUI.Button (new Rect (Screen.width/20*1,Screen.height/4*3,200,50), "Quit",play)) 
 		{ 
 			Application.Quit();
 			Debug.Log("game quit");
@@ -105,6 +106,8 @@ public class HomeScreen : MonoBehaviour
 	//>>-----------------------------------Options layout
 	private void optionfunc (int id)
 	{
+		GUI.skin.toggle = myStyle.toggle;
+
 		GUI.Label(new Rect(20,30,100,50),new GUIContent("Diffuculty"),tekst);
 		GUILayout.BeginArea(new Rect(40,50,200,200));
 			easy = GUILayout.Toggle (easy, " Easy");
@@ -123,7 +126,7 @@ public class HomeScreen : MonoBehaviour
 			hard = false;
 		}
 
-		hard = GUI.Toggle (new Rect(100, 10, 100, 30), hard, " Hard",tekst);
+		hard = GUILayout.Toggle (hard, " Hard");
 
 		if (hard) 
 		{

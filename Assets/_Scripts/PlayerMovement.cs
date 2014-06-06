@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class PlayerMovement : MonoBehaviour {
 
 
@@ -18,7 +19,14 @@ public class PlayerMovement : MonoBehaviour {
 	Vector2 colliderCenter;
 	bool playerJump;
 
+<<<<<<< HEAD
 	Animator anim;
+=======
+	public AudioSource Jump;
+	public AudioSource Gravity;
+	public AudioSource Run;
+	public AudioSource Scream;
+>>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
 
 	public bool dead = false;
 	
@@ -32,12 +40,12 @@ public class PlayerMovement : MonoBehaviour {
 		boxCollider = gameObject.collider2D as BoxCollider2D;//GetComponent(BoxCollider2D);
 		colliderSize = boxCollider.size;
 		colliderCenter = boxCollider.center;
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-
 		if(transform.position.x <= 0)
 		{
 			transform.Translate(0.5f * Time.deltaTime,0,0);
@@ -49,14 +57,22 @@ public class PlayerMovement : MonoBehaviour {
 				rigidbody2D.AddForce(new Vector2(0,jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
+<<<<<<< HEAD
 				anim.SetBool("JumpAnim", true);
+=======
+				Jump.audio.Play();
+>>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
 			}
 			if(playerJump == false && rigidbody2D.gravityScale == -gravitiScale)
 			{
 				rigidbody2D.AddForce(new Vector2(0,-jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
+<<<<<<< HEAD
 				anim.SetBool("JumpAnim", true);
+=======
+				Jump.audio.Play();
+>>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
 			}
 		}
 		if(Input.GetKeyDown (KeyCode.W) && Time.time > gravityCooldown)
@@ -65,24 +81,34 @@ public class PlayerMovement : MonoBehaviour {
 			{
 				rigidbody2D.gravityScale = -gravitiScale;
 				gravityCooldown =  Time.time + setGravityCooldown;
+<<<<<<< HEAD
 				transform.localScale = new Vector3(1,-1,1);
+=======
+				transform.localScale = new Vector3(1,1,-1);
+				Gravity.audio.Play();
+>>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
 			}
 			else
 			{
 				rigidbody2D.gravityScale = gravitiScale;
 				gravityCooldown =  Time.time + setGravityCooldown;
 				transform.localScale = new Vector3(1,1,1);
+				Gravity.audio.Play();
 			}
 		}
 
+<<<<<<< HEAD
 		if(transform.position.x < -12f || transform.position.y < -1f || transform.position.y > 12f)
+=======
+		if(transform.position.x < -10f || transform.position.y < -1f || transform.position.y > 12f && dead == false)
+>>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
 		{
+			Scream.audio.Play();
 			//Destroy(this.gameObject);
 			if(GetComponent<PauzeOption> ().yourScore > PlayerPrefs.GetInt("highScore"))
 			{
 				PlayerPrefs.SetInt("highScore", GetComponent<PauzeOption> ().yourScore);
 			}
-			Component ds = this.gameObject.AddComponent("DeadScreen"); //blijft alles hierin elk frame uitvoeren!
 			dead = true;
 		}
 
@@ -93,13 +119,17 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D coll)
+	private void OnCollisionEnter2D(Collision2D coll)
 	{
 		if (Time.time > jumpCooldown && playerJump == true)
 		{
 			playerJump = false;
+<<<<<<< HEAD
 			anim.SetBool("JumpAnim", false);
 
+=======
+			Run.audio.Play();
+>>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
 		}
 
 	}

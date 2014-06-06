@@ -18,12 +18,15 @@ public class PlayerMovement : MonoBehaviour {
 	Vector2 colliderCenter;
 	bool playerJump;
 
+	Animator anim;
+
 	public bool dead = false;
 	
 
 	// Use this for initialization
 	void Start () 
 	{
+		anim = GameObject.Find("GameObject_Char").GetComponent<Animator>();
 		playerJump = false;
 		rigidbody2D.gravityScale = gravitiScale;
 		boxCollider = gameObject.collider2D as BoxCollider2D;//GetComponent(BoxCollider2D);
@@ -46,12 +49,14 @@ public class PlayerMovement : MonoBehaviour {
 				rigidbody2D.AddForce(new Vector2(0,jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
+				anim.SetBool("JumpAnim", true);
 			}
 			if(playerJump == false && rigidbody2D.gravityScale == -gravitiScale)
 			{
 				rigidbody2D.AddForce(new Vector2(0,-jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
+				anim.SetBool("JumpAnim", true);
 			}
 		}
 		if(Input.GetKeyDown (KeyCode.W) && Time.time > gravityCooldown)
@@ -60,7 +65,7 @@ public class PlayerMovement : MonoBehaviour {
 			{
 				rigidbody2D.gravityScale = -gravitiScale;
 				gravityCooldown =  Time.time + setGravityCooldown;
-				transform.localScale = new Vector3(1,1,-1);
+				transform.localScale = new Vector3(1,-1,1);
 			}
 			else
 			{
@@ -93,6 +98,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (Time.time > jumpCooldown && playerJump == true)
 		{
 			playerJump = false;
+			anim.SetBool("JumpAnim", false);
 
 		}
 

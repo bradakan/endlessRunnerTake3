@@ -109,10 +109,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 274623105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635d0161151074ffe91475c1c21941c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ac58cba1ceeb7346938cc397dd279bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 10
+  gameSpeed: 0
   Diff: 0
 --- !u!1 &1620740658
 GameObject:
@@ -213,7 +213,7 @@ MonoBehaviour:
   play:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 2800000, guid: fc316d85d062442a1a4298b74dd7e3f6, type: 3}
+      m_Background: {fileID: 2800000, guid: a62504097ff8008418f0ececd7ae0c46, type: 3}
       m_TextColor: {r: 0, g: .00689649582, b: 1, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
@@ -256,7 +256,7 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 12800000, guid: 5c16132cf21894231b06f82ce74eed60, type: 3}
+    m_Font: {fileID: 12800000, guid: 937347b0b249e9b4792c868e00075223, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_Alignment: 4
@@ -351,7 +351,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2110863499}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 09ba6d8dc6aa640549ac390eb5762cd4, type: 3}
+  m_Texture: {fileID: 2800000, guid: dd28bc6940e1b554abe8dfc8743a9674, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2

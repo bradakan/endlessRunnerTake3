@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class PlayerMovement : MonoBehaviour {
 
 
@@ -18,6 +19,11 @@ public class PlayerMovement : MonoBehaviour {
 	Vector2 colliderCenter;
 	bool playerJump;
 
+	public AudioSource Jump;
+	public AudioSource Gravity;
+	public AudioSource Run;
+	public AudioSource Scream;
+
 	public bool dead = false;
 	
 
@@ -29,12 +35,12 @@ public class PlayerMovement : MonoBehaviour {
 		boxCollider = gameObject.collider2D as BoxCollider2D;//GetComponent(BoxCollider2D);
 		colliderSize = boxCollider.size;
 		colliderCenter = boxCollider.center;
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-
 		if(transform.position.x <= 0)
 		{
 			transform.Translate(0.5f * Time.deltaTime,0,0);
@@ -46,12 +52,14 @@ public class PlayerMovement : MonoBehaviour {
 				rigidbody2D.AddForce(new Vector2(0,jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
+				Jump.audio.Play();
 			}
 			if(playerJump == false && rigidbody2D.gravityScale == -gravitiScale)
 			{
 				rigidbody2D.AddForce(new Vector2(0,-jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
+				Jump.audio.Play();
 			}
 		}
 		if(Input.GetKeyDown (KeyCode.W) && Time.time > gravityCooldown)
@@ -61,23 +69,25 @@ public class PlayerMovement : MonoBehaviour {
 				rigidbody2D.gravityScale = -gravitiScale;
 				gravityCooldown =  Time.time + setGravityCooldown;
 				transform.localScale = new Vector3(1,1,-1);
+				Gravity.audio.Play();
 			}
 			else
 			{
 				rigidbody2D.gravityScale = gravitiScale;
 				gravityCooldown =  Time.time + setGravityCooldown;
 				transform.localScale = new Vector3(1,1,1);
+				Gravity.audio.Play();
 			}
 		}
 
-		if(transform.position.x < -10f || transform.position.y < -1f || transform.position.y > 12f)
+		if(transform.position.x < -10f || transform.position.y < -1f || transform.position.y > 12f && dead == false)
 		{
+			Scream.audio.Play();
 			//Destroy(this.gameObject);
 			if(GetComponent<PauzeOption> ().yourScore > PlayerPrefs.GetInt("highScore"))
 			{
 				PlayerPrefs.SetInt("highScore", GetComponent<PauzeOption> ().yourScore);
 			}
-			Component ds = this.gameObject.AddComponent("DeadScreen"); //blijft alles hierin elk frame uitvoeren!
 			dead = true;
 		}
 
@@ -88,12 +98,12 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D coll)
+	private void OnCollisionEnter2D(Collision2D coll)
 	{
 		if (Time.time > jumpCooldown && playerJump == true)
 		{
 			playerJump = false;
-
+			Run.audio.Play();
 		}
 
 	}

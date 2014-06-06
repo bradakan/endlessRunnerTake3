@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//gemaakt door Koen en Rocky
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -19,14 +20,14 @@ public class PlayerMovement : MonoBehaviour {
 	Vector2 colliderCenter;
 	bool playerJump;
 
-<<<<<<< HEAD
+
 	Animator anim;
-=======
+
 	public AudioSource Jump;
 	public AudioSource Gravity;
 	public AudioSource Run;
 	public AudioSource Scream;
->>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
+
 
 	public bool dead = false;
 	
@@ -57,22 +58,18 @@ public class PlayerMovement : MonoBehaviour {
 				rigidbody2D.AddForce(new Vector2(0,jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
-<<<<<<< HEAD
 				anim.SetBool("JumpAnim", true);
-=======
 				Jump.audio.Play();
->>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
+
 			}
 			if(playerJump == false && rigidbody2D.gravityScale == -gravitiScale)
 			{
 				rigidbody2D.AddForce(new Vector2(0,-jumpForce));
 				playerJump = true;
 				jumpCooldown = Time.time + setJumpCooldown;
-<<<<<<< HEAD
 				anim.SetBool("JumpAnim", true);
-=======
 				Jump.audio.Play();
->>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
+
 			}
 		}
 		if(Input.GetKeyDown (KeyCode.W) && Time.time > gravityCooldown)
@@ -81,12 +78,9 @@ public class PlayerMovement : MonoBehaviour {
 			{
 				rigidbody2D.gravityScale = -gravitiScale;
 				gravityCooldown =  Time.time + setGravityCooldown;
-<<<<<<< HEAD
 				transform.localScale = new Vector3(1,-1,1);
-=======
-				transform.localScale = new Vector3(1,1,-1);
 				Gravity.audio.Play();
->>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
+
 			}
 			else
 			{
@@ -97,11 +91,8 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 
-<<<<<<< HEAD
-		if(transform.position.x < -12f || transform.position.y < -1f || transform.position.y > 12f)
-=======
+
 		if(transform.position.x < -10f || transform.position.y < -1f || transform.position.y > 12f && dead == false)
->>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
 		{
 			Scream.audio.Play();
 			//Destroy(this.gameObject);
@@ -124,12 +115,9 @@ public class PlayerMovement : MonoBehaviour {
 		if (Time.time > jumpCooldown && playerJump == true)
 		{
 			playerJump = false;
-<<<<<<< HEAD
 			anim.SetBool("JumpAnim", false);
-
-=======
 			Run.audio.Play();
->>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
+
 		}
 
 	}

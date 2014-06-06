@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+//gemaakt door Koen en Rocky
+
 // Slaat de data uit het option screen op.
 public class GameData : MonoBehaviour 
 {

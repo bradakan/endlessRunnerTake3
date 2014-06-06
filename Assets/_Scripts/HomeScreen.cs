@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// Koen
+//gemaakt door Koen en Rocky
 
 public class HomeScreen : MonoBehaviour 
 {

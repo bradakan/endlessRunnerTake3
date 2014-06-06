@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//gemaakt door Koen en Rocky
+
 public class WallController : MonoBehaviour {
 	
 	float speed = 10f;

@@ -123,7 +123,7 @@ AudioSource:
   m_GameObject: {fileID: 274623105}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: c58db0fd8964b4c21b9cc03c68181092, type: 3}
+  m_audioClip: {fileID: 8300000, guid: eb5bed1fcc19cab4992ea388a64b4b66, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -269,14 +269,14 @@ MonoBehaviour:
   medium: 0
   hard: 0
   speed: 10
-  myStyle: {fileID: 11400000, guid: ca244189e35f4410e900dae0cfbc0d81, type: 2}
+  myStyle: {fileID: 11400000, guid: 3bc7ab881ed2a444b93b5936ee3d4532, type: 2}
   play:
-    m_Name: buttons
+    m_Name: 
     m_Normal:
       m_Background: {fileID: 2800000, guid: a62504097ff8008418f0ececd7ae0c46, type: 3}
-      m_TextColor: {r: 0, g: .00689649582, b: 1, a: 1}
+      m_TextColor: {r: 0, g: 0, b: 1, a: 1}
     m_Hover:
-      m_Background: {fileID: 2800000, guid: fc316d85d062442a1a4298b74dd7e3f6, type: 3}
+      m_Background: {fileID: 2800000, guid: a62504097ff8008418f0ececd7ae0c46, type: 3}
       m_TextColor: {r: 1, g: 0, b: 0, a: 1}
     m_Active:
       m_Background: {fileID: 0}
@@ -375,7 +375,7 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 12800000, guid: 5c16132cf21894231b06f82ce74eed60, type: 3}
+    m_Font: {fileID: 12800000, guid: 937347b0b249e9b4792c868e00075223, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_Alignment: 0
@@ -411,11 +411,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2110863499}
   m_Enabled: 1
-<<<<<<< HEAD
-  m_Texture: {fileID: 2800000, guid: dd28bc6940e1b554abe8dfc8743a9674, type: 3}
-=======
-  m_Texture: {fileID: 2800000, guid: 08c33a33e95464c60a8598e0c4e31395, type: 3}
->>>>>>> 6b5244d55fbdb8476427bcbff62ff1131aac1653
+  m_Texture: {fileID: 2800000, guid: d39bab865809d014eb59bf10103cdd17, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2

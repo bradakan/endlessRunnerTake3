@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//gemaakt door Koen en Rocky
+
 public class DeadScreen : MonoBehaviour {
 	
 	private Rect PopUp;

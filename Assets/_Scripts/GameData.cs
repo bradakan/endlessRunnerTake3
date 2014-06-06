@@ -25,7 +25,7 @@ public class GameData : MonoBehaviour
 	public void getData()
 	{
 		gameSpeed = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().speed;
-		Debug.Log (gameSpeed);
+		//Debug.Log (gameSpeed);
 
 		Easy = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().easy;
 		Hard = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().hard;

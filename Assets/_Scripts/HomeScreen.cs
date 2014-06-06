@@ -58,7 +58,7 @@ public class HomeScreen : MonoBehaviour
 			credits=false;
 			reset=false;
 			optionPopUp();
-			Debug.Log("Options is open");
+			//Debug.Log("Options is open");
 		};
 		if (GUI.Button (new Rect (Screen.width/20*2,Screen.height/8*5,200,50), "Reset Stats",play)) 
 		{

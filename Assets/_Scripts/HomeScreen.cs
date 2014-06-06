@@ -199,9 +199,9 @@ public class HomeScreen : MonoBehaviour
 		GUI.Label(new Rect(35, 70, 1000, 50), new GUIContent("Koen Van der Velden"),tekst);
 		
 		GUI.Label(new Rect(20, 90, 100, 50), new GUIContent("Artists"),tekst);
-		GUI.Label(new Rect(35, 110, 1000, 50), new GUIContent("Steven Stier"),tekst);
+		GUI.Label(new Rect(35, 110, 1000, 50), new GUIContent("Steven Sier"),tekst);
 		GUI.Label(new Rect(35, 130, 1000, 50), new GUIContent("Armand Meghoe"),tekst);
-		GUI.Label(new Rect(35, 150, 1000, 50), new GUIContent("Daniël Epke"),tekst);
+		GUI.Label(new Rect(35, 150, 1000, 50), new GUIContent("Daniel Epke"),tekst);
 		GUI.Label(new Rect(35, 170, 1000, 50), new GUIContent("Ludo Domna"),tekst);
 
 		if (GUI.Button (new Rect(PopUp2.width/4,215,PopUp2.width/2,25),"Close",play)) 

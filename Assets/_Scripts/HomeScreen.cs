@@ -195,7 +195,7 @@ public class HomeScreen : MonoBehaviour
 	private void credfunc(int id)
 	{
 		GUI.Label(new Rect(20, 30, 100, 50), new GUIContent("Developers"),tekst);
-		GUI.Label(new Rect(35, 50, 1000, 50), new GUIContent("Rocky Tempelaar"),tekst);
+		GUI.Label(new Rect(35, 50, 1000, 50), new GUIContent("Rocky Tempelaars"),tekst);
 		GUI.Label(new Rect(35, 70, 1000, 50), new GUIContent("Koen Van der Velden"),tekst);
 		
 		GUI.Label(new Rect(20, 90, 100, 50), new GUIContent("Artists"),tekst);

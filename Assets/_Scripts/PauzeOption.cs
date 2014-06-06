@@ -89,6 +89,8 @@ public class PauzeOption : MonoBehaviour
 
 		if (GUI.Button(new Rect(20,145,PauzePopUp.width-40,30), "Main Menu",play))
 		{
+			
+			GameObject.Find ("Game Data").GetComponent <GameData> ().destroy();
 			Application.LoadLevel(0);
 		}
 

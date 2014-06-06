@@ -28,8 +28,8 @@ public class GameData : MonoBehaviour
 		Debug.Log (gameSpeed);
 
 		Easy = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().easy;
-		Hard = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().medium;
-		Medium = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().hard;
+		Hard = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().hard;
+		Medium = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().medium;
 
 		if (Easy == true) 
 		{

@@ -12,7 +12,7 @@ public class WallController : MonoBehaviour {
 	float speedSetCooldown = 5;
 	float speedCooldown = 5;
 	public float timeScale = 1;
-	private int diff;
+	public int diff;
 
 
 	void Start()

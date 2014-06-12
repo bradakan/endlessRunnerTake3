@@ -5,14 +5,16 @@ using System.Collections.Generic;
 //gemaakt door Koen en Rocky
 
 public class WallController : MonoBehaviour {
-	
-	float speed = 10f;
+
+	//the target that it moves behind
 	public Transform otherWall;
+
+	float speed = 10f;
 	public List<GameObject> walls = new List<GameObject>();
-	float speedSetCooldown = 5;
-	float speedCooldown = 5;
 	public float timeScale = 1;
 	public int diff;
+	float speedSetCooldown = 5;
+	float speedCooldown = 5;
 
 
 	void Start()
@@ -24,7 +26,7 @@ public class WallController : MonoBehaviour {
 	
 	void Update () 
 	{
-
+		//this moves the wall chunk behind the other one
 		if(transform.position.x <= -30f)
 		{
 			Vector3 temp = otherWall.position; // copy to an auxiliary variable...
@@ -36,20 +38,25 @@ public class WallController : MonoBehaviour {
 		}
 
 
-
+		//wall movement
 		transform.Translate(-1 * speed * Time.deltaTime,0,0);
 
+		//the speed cooldown
 		if(Time.time > speedCooldown)
 		{
 			speed *= 1.05f;
 			if(speed > 20)
 			{
+				//remiving the gravity switch cooldown
 				GameObject.Find("Runner").GetComponent<PlayerMovement>().gravCdTo0();
+
+				//in case you start at a higher speed this is needed so you dont teleport trough walls
 				GameObject.Find("Runner").GetComponent<PlayerMovement>().increaseBoxColliderSize();
 				GameObject.Find("Runner").GetComponent<PlayerMovement>().increaseBoxColliderSize();
 				GameObject.Find("Runner").GetComponent<PlayerMovement>().increaseBoxColliderSize();
 				GameObject.Find("Runner").GetComponent<PlayerMovement>().increaseBoxColliderSize();
 			}
+			//setting the cooldown
 			speedCooldown = Time.time + speedSetCooldown;
 		}
 

@@ -77,7 +77,7 @@ public class HomeScreen : MonoBehaviour
 		};
 
 
-		//start en roept de functie aan om te resetten
+		//roept de functie aan om te resetten
 		if (reset) 
 		{
 			GUI.Label(new Rect(Screen.width/2,Screen.height/4,400,200),"Your data has been reset");
@@ -90,6 +90,7 @@ public class HomeScreen : MonoBehaviour
 		{
 			PopUp = GUI.Window(0,PopUp,optionfunc,"Options");
 		}
+
 		//start de how to play popup
 		if (howToPlay) 
 		{
@@ -188,20 +189,20 @@ public class HomeScreen : MonoBehaviour
 			howToPlay = true;
 		}
 	}
-	//<<-----------------------------------Credits
+	//<<-----------------------------------how to play layout
 
 	
 	//>>-----------------------------------Credits layout
 	private void credfunc(int id)
 	{
 		GUI.Label(new Rect(20, 30, 100, 50), new GUIContent("Developers"),tekst);
-		GUI.Label(new Rect(35, 50, 1000, 50), new GUIContent("Rocky Tempelaars"),tekst);
+		GUI.Label(new Rect(35, 50, 1000, 50), new GUIContent("Rocky Tempelaar"),tekst);
 		GUI.Label(new Rect(35, 70, 1000, 50), new GUIContent("Koen Van der Velden"),tekst);
 		
 		GUI.Label(new Rect(20, 90, 100, 50), new GUIContent("Artists"),tekst);
-		GUI.Label(new Rect(35, 110, 1000, 50), new GUIContent("Steven Sier"),tekst);
+		GUI.Label(new Rect(35, 110, 1000, 50), new GUIContent("Steven Stier"),tekst);
 		GUI.Label(new Rect(35, 130, 1000, 50), new GUIContent("Armand Meghoe"),tekst);
-		GUI.Label(new Rect(35, 150, 1000, 50), new GUIContent("Daniel Epke"),tekst);
+		GUI.Label(new Rect(35, 150, 1000, 50), new GUIContent("Daniël Epke"),tekst);
 		GUI.Label(new Rect(35, 170, 1000, 50), new GUIContent("Ludo Domna"),tekst);
 
 		if (GUI.Button (new Rect(PopUp2.width/4,215,PopUp2.width/2,25),"Close",play)) 

@@ -9,9 +9,7 @@ public class GameData : MonoBehaviour
 
 
 	public float gameSpeed;
-
 	public int Diff;
-
 	private bool Easy;
 	private bool Medium;
 	private bool Hard;
@@ -24,6 +22,8 @@ public class GameData : MonoBehaviour
 	// Update is called once per frame
 	public void getData()
 	{
+		// de volgende data word opgeslagen vanuit het home screen op het moment dat de speler de game start.
+
 		gameSpeed = GameObject.Find ("Main Camera").GetComponent <HomeScreen> ().speed;
 		//Debug.Log (gameSpeed);
 
@@ -45,7 +45,7 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-
+	//Maakt dit game object stuk als je terug naar de home screen gaat.
 	public void destroy()
 	{
 		Destroy (this.gameObject);

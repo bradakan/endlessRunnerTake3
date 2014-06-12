@@ -11,16 +11,19 @@ public class DeadScreen : MonoBehaviour {
 	public GUIStyle tekst;
 	public AudioSource Scream;
 
-
 	int score;
 	// Use this for initialization
+
 	void Start () {
 		PopUp = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 200);
+
+		//haalt textures op
 		play = GetComponent<PauzeOption> ().play;
 		tekst = GetComponent<PauzeOption> ().tekst;
 	}
 
 	private void OnGUI(){
+		//start als de player dood is en word dan dus zichtbaar
 		if(GetComponent<PlayerMovement> ().dead == true)
 		{
 		PopUp = GUI.Window (0, PopUp, deadFunc, "Game over");
@@ -29,7 +32,8 @@ public class DeadScreen : MonoBehaviour {
 			Scream.audio.Play();
 		}
 	}
-	
+
+	//inhoud van het dead screen
 	void deadFunc(int id)
 	{
 		GUI.Label (new Rect(100,50,200,200), "your final score = " + GetComponent<PauzeOption>().yourScore,tekst);
